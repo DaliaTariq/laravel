@@ -87,6 +87,11 @@ a:hover{
     background: #fff;
     color:rgba(53, 53, 53, 0.7);
     transition-duration: .4s;
-    ma
+    
 
+}
+
+
+.dataTables_wrapper .row{
+    width: 100%;
 }

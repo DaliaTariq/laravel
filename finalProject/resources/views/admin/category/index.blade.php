@@ -23,7 +23,7 @@
                                     
                                     <div class="card-body">
                                             @if($categories->count()>0)
-                                        <table class="table table-striped">
+                                        <table  id="category" class="table table-striped table-bordered dtable" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">Image</th>

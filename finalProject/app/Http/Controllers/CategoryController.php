@@ -98,24 +98,24 @@ class CategoryController extends Controller
         $category = Category ::find($id);
         //VAlidation
        $this->validate($request,[
-            "name"=>"required",
+          //  "name"=>"required",
             "description"=>"required"
           ]);
 
 
                     //في حال بدو المستخدم يعدل الصورة
-        if($request->hasFile('image')){
+       /* if($request->hasFile('image')){
               $image = $request->image;
               $image_new_name= time().$image->getClientOriginalName(); 
               $image->move('uploads/category/',  $image_new_name);
               $category->image ='uploads/category/'. $image_new_name;
-         }
+         }*/
        //  dd( $category);
 
-         $category->name = $request->name;
+         //$category->name = $request->name;
          $category->description= $request->description;
          $category->save();
-         return view('admin.category.index');
+         return view('admin.category.index')->with('categories',category::all());;
         //dd($request->all());
     }
 

@@ -23,7 +23,7 @@
                                     
                                     <div class="card-body">
                                             @if($halls->count()>0)
-                                        <table class="table table-striped">
+                                        <table class="table table-striped table-bordered dtable">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
