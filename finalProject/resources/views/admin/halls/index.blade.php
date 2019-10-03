@@ -41,7 +41,7 @@
                                                     {{$i++}}
                                                     </th>
                                                     <td scope="row">{{$hall->name}}</td>
-                                                    <td scope="row">{{$hall->created_at}}</td>
+                                                    <td scope="row">{{$hall->created_at->diffForHumans()}}</td>
                                                   
                                                     <td> <a class="" href="{{route('edit_hall',['$id'=>$hall->id])}}">
                                                         <i class="fas fa-edit"></i>

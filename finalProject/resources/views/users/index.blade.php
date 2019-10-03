@@ -30,7 +30,7 @@
            @foreach ($categories as $category)
                 
            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <a class="category wow fadeInRight animated animated"
+                <a href="{{route('service_page',['$id'=> $category->id])}}" class="category wow fadeInRight animated animated"
                     style="visibility: visible;-webkit-animation-delay: 1.2s; -moz-animation-delay: 1.2s; animation-delay: 1.2s;"
                     data-wow-delay="1.2s">
                     <div class="opacity">

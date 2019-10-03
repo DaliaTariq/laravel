@@ -7,6 +7,8 @@ use Illuminate\support\Facades\mail;
 use App \Mail\CountactUs;
 use App\Category;
 use App\offer;
+use App\Hall;
+use App\Storage;
 
 class frontController extends Controller
 {
@@ -51,6 +53,17 @@ class frontController extends Controller
 
      
 
+
+    }
+
+
+    public function servicePage($id){
+        $category = Category::find($id);
+        $hall = Hall::paginate(6);
+        $storage = Storage::paginate(6);
+        return view('users.servises')->with('category',  $category)
+                                    ->with('hall', $hall)
+                                    ->with('storage',  $storage);
 
     }
 

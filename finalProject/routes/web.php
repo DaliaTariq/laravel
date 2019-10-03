@@ -97,6 +97,8 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/','frontController@index')->name('index');
     Route::get('/halls','frontController@halls')->name('halls');
     Route::post('/dosend','frontController@dosend')->name('dosend');
+     Route::get('/category/{id}', 'frontController@servicePage')->name('service_page');
+
    
  
 

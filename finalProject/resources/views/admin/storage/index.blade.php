@@ -48,7 +48,7 @@
                                                     {{$i++}}
                                                     </th>
                                                     <td scope="row">{{$storage->name}}</td>
-                                                    <td scope="row">{{$storage->created_at}}</td>
+                                                    <td scope="row">{{$storage->created_at->diffForHumans()}}</td>
                                                   
                                                     <td> <a class="" href="{{route('edit_storage',['$id'=>$storage->id])}}">
                                                         <i class="fas fa-edit"></i>

@@ -29,7 +29,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                    <a class="nav-item nav-link  " href="{{route('home')}}">الرئيسية</a>
+                    <a class="nav-item nav-link  " href="{{route('index')}}">الرئيسية</a>
                     <a class="nav-item nav-link" href="#">خدمات</a>
                     <a class="nav-item nav-link" href="#">من نحن</a>
                     <a class="nav-item nav-link " href="#">عروض </a>

@@ -49,7 +49,7 @@
                                                     <img class="text-center d-block" src="/{{$offer->image}}" alt="cat_image" style="width:40px;hight:40px;display:inline-block; margin:0 auto;">
                                                     </th>
                                                     <td scope="row">{{$offer->name}}</td>
-                                                    <td scope="row">{{$offer->created_at}}</td>
+                                                    <td scope="row">{{$offer->created_at->diffForHumans()}}</td>
                                                   
                                                     <td> <a class="" href="{{route('edit_offer',['$id'=>$offer->id])}}">
                                                         <i class="fas fa-edit"></i>

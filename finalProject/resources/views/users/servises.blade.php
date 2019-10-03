@@ -9,7 +9,7 @@
                            <div class="hall_image">
                            <img src="{{asset('front/images/Group 8.png')}}" >
                            </div>
-                            <h3 style="margin-left:40px; color:#737272;">قاعات</h3>
+                        <h3 style="margin-left:40px; color:#737272;">{{$category->name}}</h3>
                     </div>
                 </div>
             </div>

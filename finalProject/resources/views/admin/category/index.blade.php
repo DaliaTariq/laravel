@@ -49,7 +49,7 @@
                                                     <img class="text-center d-block" src="/{{$category->image}}" alt="cat_image" style="width:40px;hight:40px;display:inline-block; margin:0 auto;">
                                                     </th>
                                                     <td scope="row">{{$category->name}}</td>
-                                                    <td scope="row">{{$category->created_at}}</td>
+                                                    <td scope="row">{{$category->created_at->diffForHumans()}}</td>
                                                   
                                                     <td> <a class="" href="{{route('edit_category',['$id'=>$category->id])}}">
                                                         <i class="fas fa-edit"></i>
