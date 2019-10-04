@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-12">
                            <div class="hall_image">
-                           <img src="{{asset('front/images/Group 8.png')}}" >
+                           <img src="/{{$category->image}}" style="display:inline-block; width:auto; margin-bottom:5px;">
                            </div>
                         <h3 style="margin-left:40px; color:#737272;">{{$category->name}}</h3>
                     </div>
@@ -18,7 +18,7 @@
 <!-----------------------Page Content--------------------->
 
  
-
+   
 
 
 <section class="offers-page">
