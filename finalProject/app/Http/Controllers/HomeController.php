@@ -7,6 +7,7 @@ use App\Category;
 use App\Hall;
 use App\Storage;
 use App\offer;
+use App\ButyCenter;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,7 @@ class HomeController extends Controller
         return view('admin.home')->with('category' ,Category::all())
                                  ->with('hall', HAll::all())
                                  ->with('storage', Storage::all())
-                                 ->with('offer', offer::all());
+                                 ->with('offer', offer::all())
+                                ->with('centers',ButyCenter::all());
     }
 }

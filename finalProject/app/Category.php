@@ -39,6 +39,11 @@ public function storages()
     return $this->hasMany('App\Storage');
 }
 
+public function butyCrnter()
+{
+    return $this->hasMany('App\ButyCenter');
+}
+
 
 protected static function boot(){
     parent::boot();

@@ -76,6 +76,16 @@ a:hover{
     background: #fff;
     margin-top: 10px;
 }
+.dropdown-menu{
+   top:95%;
+}
+.navbar-light .navbar-nav .nav-link{
+   color:#fff;
+   font-size: 18px;
+}
+.dropdown-toggle::after{
+   display: none;
+}
 
 /****************Start Hero***************************/
 #hero{
@@ -361,16 +371,12 @@ font-size: 15px;
 #contact .footer .social{
    position: absolute;
    bottom: 20px;
-   left: 25%;
+   left: 40%;
    margin: 0 auto;
    width:72%;
 }
- .footer .social .right,
-.footer .social .left{
-   float: left;
-   width:45%;
-}
-.footer .social .right li,
+ 
+
 .footer .social .left li{
    margin-left: 12px;
    width:50px;
@@ -379,7 +385,7 @@ font-size: 15px;
    background: #FF94C2;
    text-align: center;
 }
- .footer .social .right li a,
+
 .footer .social .left li a{
    width:100%;
    display: inline-block;
@@ -559,19 +565,20 @@ main#hall .hall h3{
    display: inline-block;
    color: #B5004D;
    padding-right: 15px;
+   font-size: 18px;
 }
 #hall .page_content .contact_info li {
    display: inline-block;
    width:46px;
    height: 46px;
    border-radius: 100%;
-   background: #FF94C2;
+   background-color: #B5004D;
    color: #fff;
    margin-left: 10px;
 
 }
 #hall .page_content .contact_info li:hover{
-   background-color: #B5004D;
+  box-shadow: 0 5px 10px rgba(0, 0, 0,0.5);
    transition-duration: .4s;
 }
 #hall .page_content .contact_info ul{
@@ -583,6 +590,34 @@ main#hall .hall h3{
    text-align: center;
    line-height: 46px;
    color:#fff;
+}
+/*****Clothes Page*****/
+.hero_image{
+   width: 100%;
+  height: 500px;
+   margin-bottom: 80px;
+   position: relative;
+}
+.hero_image img{
+ width: 100%;
+ height: 100%;
+}
+.hero_image .overlay{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top:0;
+   bottom: 0;
+   left:0;
+   right:0;
+   background: rgba(0, 0, 0,0.5);
+   color:#fff;
+  padding: 18% 0;
+}
+.hero_image .overlay h2{
+   font-family: 'Changa', sans-serif;
+   font-size: 55px;
+  
 }
 
 

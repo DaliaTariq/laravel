@@ -19,7 +19,7 @@ class HallController extends Controller
         $i =1 ;
         return view('admin.halls.index')->with('halls',Hall::all())
                                         ->with('i',$i );
-       // return view('admin.halls.index');
+
     }
 
     /**
@@ -46,43 +46,72 @@ class HallController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $this->validate($request,[
-            "category_id"=>"required",
-            "name"=>"required",
-            "description"=>"required",
-            "vedio_link"=>"required",
-            'image'=>'required',
-            "address"=>"required",
-            "mobile"=>"required",
-            "watts"=>"required",
-            "facebook"=>"required",
-            "enestegram"=>"required"
-          ]);
+      $request->validate($this->rules(),$this->messages());
+    
+            //image data for uploade
+            $image = $request->image;
+            $image_new_name= time().$image->getClientOriginalName(); 
+            $image->move('uploads/services/',  $image_new_name); //path where the images will save*/
 
-                    //image data for uploade
-                    $image = $request->image;
-                    $image_new_name= time().$image->getClientOriginalName(); 
-                    $image->move('uploads/halls/',  $image_new_name); //path where the images will save*/
+            $hall = Hall::create([
+              'name'=>$request->name,
+              'category_id'=>$request->category_id,
+              'description'=>$request->description,
+              'vedio_link'=>$request->vedio_link,
+              "image"=> 'uploads/services/'. $image_new_name,
+              'address'=>$request->address,
+              'mobile'=>$request->mobile,
+              'watts'=>$request->watts,
+              'facebook'=>$request->facebook,
+              'enestegram'=>$request->enestegram
+            ]);
 
-
-
-          $hall =Hall::create([
-            "category_id"=> $request->category_id,
-            "name"=> $request->name,
-            "description"=> $request->description,
-            "vedio_link"=> $request->vedio_link,
-            "address"=> $request->address,
-            "mobile"=> $request->mobile,
-            "watts"=> $request->watts,
-            "facebook"=> $request->facebook,
-            "enestegram"=> $request->enestegram,
-            "image"=> 'uploads/halls/'. $image_new_name
-           
-           ]);
-           $hall->save();
-           return redirect()->back();
+            $hall->save();
+             return redirect()->back();
     }
+
+private function rules($id = null){
+
+    $rulls =[
+
+      "category_id"=>"required",
+      "description"=>"required",
+      "vedio_link"=>"required",
+       "address"=>"required",
+       "mobile"=>"required",
+      "watts"=>"required",
+       "facebook"=>"required|url",
+       "enestegram"=>"required|url"
+  ];
+
+  if($id){
+      $rulls['name']= "required|unique:storages,name," . $id;  //for update
+      }
+
+      else{
+          $rulls['name']= "required|unique:storages,name";  //for store
+          $rulls['image']="required|image|mimes:jpg,png,jpeg";
+      }
+
+  return $rulls;
+}
+
+
+private function messages(){
+  return [
+     'name.required' =>'Please Enter the name of storage',
+     'name.unique' =>'Please Enter the name of storage must be unique',
+     'description.required' =>'Please Enter the description of storage',
+     'mobile.required' =>'Please Enter the mobile number of storage',
+     'watts.required' =>'Please Enter the watts app number of storage',
+     'facebook.required' =>'Please Enter the faceboke link',
+     'facebook.url' =>'the input must be link ',
+     'enestegram.required' =>'Please Enter the faceboke link',
+     'enestegram.url' =>'the input must be link ',
+
+
+  ];
+}
 
     /**
      * Display the specified resource.
@@ -121,7 +150,7 @@ class HallController extends Controller
         //
         $hall = Hall::find($id);
 
-        $this->validate($request,[
+      /*  $this->validate($request,[
           // "category_id"=>"required",
             "name"=>"required",
             "description"=>"required",
@@ -132,7 +161,8 @@ class HallController extends Controller
            // "watts"=>"required|int|max:13",
              "facebook"=>"required",
              "enestegram"=>"required"
-          ]);
+          ]);*/
+          $request->validate($this->rules($id),$this->messages());
 
           if($request->hasFile('image')){
             $image = $request->image;

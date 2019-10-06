@@ -71,6 +71,21 @@
                                         </div>
                                     </div>
 
+
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="card m-4">
+                                            <div class="card-header">Buty Centers</div>
+                                            <div class="card-body">
+                                                <p>
+                                                    <i class="fas fa-cogs"></i>
+                                                    The number of services we offer:</p>
+                                                <span>{{$centers->count()}}</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                               
                                 </div>
                             </div>

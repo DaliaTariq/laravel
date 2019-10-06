@@ -1,4 +1,4 @@
-@extends('front_layout.app')
+@extends('front_layout.app',['categories'=>$forNav])
 @section('content')
 <section id="hero">
     <h1>كل ما تبحث عنه ستجده في طرحة </h1>
@@ -21,7 +21,7 @@
                     <div class="title_image">
                         <img class="" src="{{ asset('front/img/section.png') }}" alt="section_image">
                     </div>
-                    <h2>أقسام الموقغ</h2>
+                    <h2>أقسام الموقع</h2>
                    
                 </div>
             </div>
@@ -220,21 +220,12 @@
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </li>
 
-            </ul>
-            <ul class="right">
                 <li class="social_item">
-                    <a href="#"><i class="fas fa-map-marker-alt"></i></a>
-                </li>
-                <li class="social_item">
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </li>
-
-                <li class="social_item">
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </li>
-
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                    </li>
 
             </ul>
+    
         </div>
     </div>
 </section>

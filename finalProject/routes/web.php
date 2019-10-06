@@ -65,6 +65,20 @@ Route::get('/home', 'HomeController@index')->name('home');
  });
 
  /*============================================================
+  Storage Routes
+ ===========================================================*/
+ Route::prefix('buty')->group(function (){
+  Route::get('/index','butyController@index')->name('index_buty');
+ Route::get('/create','butyController@create')->name('create_buty');
+  Route::post('/store','butyController@store')->name('store_buty');
+ /* Route::get('/edit/{id}','StorageController@edit')->name('edit_storage');
+ Route::post('/update/{id}', 'StorageController@update')->name('update_storage');
+ Route::get('/delete/{id}','StorageController@destroy')->name('destroy_storage');*/
+});
+
+
+
+ /*============================================================
   Offers Routes
  ===========================================================*/
 
@@ -98,6 +112,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/halls','frontController@halls')->name('halls');
     Route::post('/dosend','frontController@dosend')->name('dosend');
      Route::get('/category/{id}', 'frontController@servicePage')->name('service_page');
+     Route::get('/clothes/{id}', 'frontController@clothes')->name('clothes_page');
 
    
  

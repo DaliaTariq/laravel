@@ -25,7 +25,8 @@ class frontController extends Controller
        $categories = Category::all();
        
         return view('users.index')->with('offers', $offers)
-                                  ->with('categories',Category::all());
+                                  ->with('categories',Category::all())
+                                  ->with('forNav',Category::all());
     }
 
     //Display Halls page
@@ -59,12 +60,20 @@ class frontController extends Controller
 
     public function servicePage($id){
         $category = Category::find($id);
-        $hall = Hall::paginate(6);
+        //$categories = Category::all();
+        $halls = Hall::paginate(6);
         $storage = Storage::paginate(6);
         return view('users.servises')->with('category',  $category)
-                                    ->with('hall', $hall)
-                                    ->with('storage',  $storage);
+                                    ->with('halls', $halls)
+                                    ->with('storage',  $storage)
+                                    ->with('forNav',Category::all());
 
+    }
+
+    public function clothes($id){
+        $storage = Storage::find($id);
+        return view('users.clothes')->with('storage',$storage)
+        ->with('forNav',Category::all());
     }
 
     /**

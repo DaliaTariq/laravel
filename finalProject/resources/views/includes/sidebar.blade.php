@@ -13,10 +13,11 @@
                                       <a href="{{route('index_hall')}}" class=" list-tem">Halls</a>
                                   
                                     <a href="{{route('index_storage')}}" class=" list-tem">Storage</a>
+                                    <a href="{{route('index_buty')}}" class=" list-tem">butty center</a>
                                       <a href="#" class=" list-tem">Zina</a>
                                       <a href="#" class=" list-tem">Zafaa</a>
 
-                                      <a href="#" class=" list-tem">butty center</a>
+                                   
                                       <a href="#" class=" list-tem">Photographer</a>
                                       <a href="#" class=" list-tem">Restorant</a>
 
