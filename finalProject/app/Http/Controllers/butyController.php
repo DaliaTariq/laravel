@@ -131,7 +131,7 @@ class butyController extends Controller
      */
     public function edit($id)
     {
-        //
+     
     }
 
     /**
@@ -143,7 +143,7 @@ class butyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

@@ -134,7 +134,7 @@ class StorageController extends Controller
     {
        $storage =Storage::find($id);
        return view('admin.storage.edit')->with('categories',Category::all())
-                                          ->with('storage', $storage);
+                                        ->with('storage', $storage);
     }
 
     /**

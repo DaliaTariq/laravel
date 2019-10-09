@@ -13,6 +13,7 @@ html ,body{
    margin: 0 auto;
    width:115px;
    height: 146px;
+   margin-top: 20px;
 }
 .section_title .title_image img{
   display: inline-block;
@@ -21,7 +22,39 @@ html ,body{
 .section_title h2{
    font-size: 50px;
    font-weight: normal;
+   position: relative;
 }
+.section_title h2::after{
+   position: absolute;
+   content: '';
+   width: 70px;
+   height: 5px;
+   background-color: #B5004D;
+   top: 36px;
+   right: 400px;
+}
+
+.section_title h2::before{
+   position: absolute;
+   content: '';
+   width: 70px;
+   height: 5px;
+   background-color: #B5004D;
+   top: 36px;
+  left:400px;
+}
+#offers .section_title h2::after{
+   right:700px;
+}
+#offers .section_title h2::before{
+   left:700px;
+}
+#contact .section_title h2::after{
+   right:500px;
+}
+#contact .section_title h2::before{
+   left:500px;
+} 
 ul{
    list-style: none;
 }

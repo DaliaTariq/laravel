@@ -26,57 +26,93 @@
     <section class="offers-page">
         <div class="container">
             <!--Storage Display-->
-           
-                <div class="offer">
-                    <div class="row justify-content-center">
-                        @foreach ($storage as $store)
-                        @if ( $category->id == $store->category_id)
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="offer_Box">
 
-                                <div class="offer_image">
-                                    <img src="/{{$store->image}}" alt="offer1" width="100%;">
+            <div class="offer">
+                <div class="row justify-content-center">
+                    @foreach ($storage as $store)
+                    @if ( $category->id == $store->category_id)
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="offer_Box">
+
+                            <div class="offer_image">
+                                <img src="/{{$store->image}}" alt="offer1" width="100%;">
+                            </div>
+
+                            <div class="details">
+                                <h3 class="title">{{$store->name}}</h3>
+                                <div class="rate">
+                                    <img class="rate" src="{{asset('front/images/loc (3).png')}}">
                                 </div>
 
+                                <a class="read_more" href="{{route('clothes_page',['$id'=> $store->id])}}">المزيد</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    @endif
+
+                    @endforeach
+
+                </div>
+                @if ( $category->id == $store->category_id)
+                {{ $storage->links() }}
+                @endif
+
+            </div>
+
+            <!--Buty center-->
+
+            <div class="offer">
+                    <div class="row justify-content-center">
+                        @foreach ($centers as $center)
+                        @if ( $category->id == $center->category_id)
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="offer_Box">
+    
+                                <div class="offer_image">
+                                    <img src="/{{$center->image}}" alt="offer1" width="100%;">
+                                </div>
+    
                                 <div class="details">
-                                    <h3 class="title">{{$store->name}}</h3>
+                                    <h3 class="title">{{$center->name}}</h3>
                                     <div class="rate">
                                         <img class="rate" src="{{asset('front/images/loc (3).png')}}">
                                     </div>
-
-                                <a class="read_more" href="{{route('clothes_page',['$id'=> $store->id])}}">المزيد</a>
+    
+                                    <a class="read_more" href="{{route('center_page',['$id'=> $center->id])}}">المزيد</a>
                                 </div>
                             </div>
                         </div>
-
-
+    
+    
                         @endif
-
+    
                         @endforeach
-                    
+    
                     </div>
-                    @if ( $category->id == $store->category_id)
-                    {{ $storage->links() }}
+                    @if ( $category->id == $center->category_id)
+                    {{ $centers->links() }}
                     @endif
-
+    
                 </div>
-         
 
 
 
-           
 
-          
-            
+
+
+
+
 
 
 
         </div>
     </section>
 
-  
 
-  
+
+
 
 
 

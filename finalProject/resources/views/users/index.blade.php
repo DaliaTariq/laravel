@@ -21,7 +21,7 @@
                     <div class="title_image">
                         <img class="" src="{{ asset('front/img/section.png') }}" alt="section_image">
                     </div>
-                    <h2>أقسام الموقع</h2>
+                    <h2>خدماتنا</h2>
                    
                 </div>
             </div>

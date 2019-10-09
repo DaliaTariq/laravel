@@ -38,15 +38,20 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   //dd($request->all());
+    {   
+        // dd($request->all());
+        // /here is the error with the rules, I think becuse trying to fech in the first time 
         $request->validate($this->rules(),$this->messages());
 
               //image data for uploade
+              if(!empty($request->file('image'))) {
               $image = $request->image;
               $image_new_name= time().$image->getClientOriginalName(); 
               $image->move('uploads/category/',  $image_new_name); //path where the images will save*/
+              }
+// dd($request);
 
-
+// you should make condtions for mepty file like  if(!empty($request->file('image'))) for store in db
                 $category = Category::create([
                     "name"=> $request->name,
                     "description"=> $request->description,
@@ -69,7 +74,7 @@ class CategoryController extends Controller
         $rulls['name']= "required|unique:categories,name," . $id;  //for update
         }
         else{
-            $rulls['name']= "required|unique:categories ,name,";  //for store
+            $rulls['name']= "required|unique:categories,name,";  //for store
             $rulls['image']="required|image|mimes:jpg,png,jpeg";
         }
         return  $rulls;

@@ -12,8 +12,8 @@
                             <div class="col-md-12 m-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2>Display all Hallls
-                                                <a class="btn btn-primary float-right mx-2" href="{{route('create_hall') }}">Add Hall</a>
+                                        <h2>Display all Halls
+                                                <a class="btn btn-primary float-right mx-2" href="{{route('create_hall')}}">Add Hall</a>
                                                  
                                                  </h2>
                                                 
@@ -22,12 +22,19 @@
                     
                                     
                                     <div class="card-body">
-                                            @if($halls->count()>0)
+
+                                            @if (session()->has('success'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ session()->get('success') }}
+                                            </div>
+                                            @endif
+
+                                            @if($hall->count()>0)
                                         <table class="table table-striped table-bordered dtable">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Hall Name</th>
+                                                    <th scope="col">Storage Name</th>
                                                     <th scope="col">Created at</th>
                                                     <th scope="col">Edit</th>
                                                     <th scope="col">Delete</th>
@@ -35,7 +42,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($halls as $hall)
+                                                @foreach($storages as $storage)
                                                 <tr>
                                                     <th scope="row">
                                                     {{$i++}}
@@ -43,11 +50,11 @@
                                                     <td scope="row">{{$hall->name}}</td>
                                                     <td scope="row">{{$hall->created_at->diffForHumans()}}</td>
                                                   
-                                                    <td> <a class="" href="{{route('edit_hall',['$id'=>$hall->id])}}">
+                                                    <td> <a class="" href="{{--route('edit_storage',['$id'=>$storage->id])--}}">
                                                         <i class="fas fa-edit"></i>
                                                     </a></td>
                                                     <td>
-                                                    <a class="" href="{{route('destroy_hall',['$id'=>$hall->id])}}">
+                                                    <a class="" href="{{--route('destroy_storage',['$id'=>$storage->id])--}}">
                                                     <i class="fas fa-trash-alt"></i>
                                                     </a>
                                                     </td>
@@ -57,8 +64,9 @@
                     
                                                 @else
                                                 <p class="text-center">
-                                                        No Halls to view Yet
-                                                
+                                                        No Hall to view Yet
+                                                <br>
+                                                        
                                                  </p>
                                                 @endif
                                             </tbody>

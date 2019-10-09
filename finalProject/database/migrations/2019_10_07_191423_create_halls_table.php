@@ -18,7 +18,7 @@ class CreateHallsTable extends Migration
             $table->string('name');
             $table->bigInteger('category_id')->unsigned();
             $table->string('description');
-            $table->string('vedio_link');
+            $table->string('vedio');
             $table->string('image');
             $table->string('address');
             $table->string('mobile');

@@ -9,7 +9,11 @@ use \Askedio\softCascade\Traits\SoftCascadeTraite;
 class Category extends Model
 
 {
+
         use SoftDeletes;
+
+        protected $table = 'categories';
+        
         protected $fillable = [
             'name', 'description','image'
         ];
@@ -39,7 +43,7 @@ public function storages()
     return $this->hasMany('App\Storage');
 }
 
-public function butyCrnter()
+public function butyCenter()
 {
     return $this->hasMany('App\ButyCenter');
 }

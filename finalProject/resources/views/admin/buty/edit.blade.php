@@ -12,7 +12,7 @@
                             <div class="col-md-12 m-4">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2>Add New hall </h2>
+                                        <h2>Edit Storage </h2>
                                                 
                                     </div>
                                     <div class="clearfix"></div>
@@ -20,14 +20,15 @@
                                     
                                     <div class="card-body">
                                        
-                                            <form action="{{url('hall/update/'.$hall->id)}}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{url('storage/update/'. $storage->id)}}" method="POST" enctype="multipart/form-data">
+                                                <!--input type="hidden" name="_method" value="PUT"-->
                                                 {{ csrf_field()}}
                         
                                                 <div class="form-group">
                                                     <label for="exampleFormControlSelect1">Categories</label>
-                                                    <select class="form-control" id="category" name="category_id" value="{{$hall->id}}">
+                                                    <select class="form-control" id="category" name="category_id" >
                                                         @foreach($categories as $category)
-                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                        <option value="{{$category->id}}" > {{$category->name}}</option>
                                                         @endforeach
                         
                                                     </select>
@@ -35,101 +36,92 @@
                         
                         
                                                 <div class="form-group">
-                                                    <label for="title">Hall Name</label>
-                                                    <input type="text" class="form-control" name="name" value="{{$hall->name}}">
+                                                    <label for="title">Storage Name</label>
+                                                    <input type="text" class="form-control" name="name" value={{$bueaty->name}}>
                                                 </div>
                                                 @error('name')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the Hall Name</span>
+                                                        <span>{{$errors->first('name')}}</span>
                                                 </div>
-                                            @enderror
+                                               @enderror
                                                 <div class="form-group">
-                                                    <label for="content">Hall Description</label>
+                                                    <label for="content">Storage Description</label>
                                                     <textarea class="form-control" name="description" rows="5">
-                                                        {{$hall->description}}
+                                                        {{$bueaty->description}}
                                                     </textarea>
                                                 </div>
 
                                             @error('description')
                                                 <div class="alert alert-danger">
-                                                    <span>Please Enter the Hall description</span>
+                                                        <span>{{$errors->first('description')}}</span>
                                                     </div>
                                             @enderror
 
-                                            <div class="form-group">
-                                                    <label for="title">vidio link</label>
-                                                    <input type="url" class="form-control" name="vedio_link"  value="{{$hall->vedio_link}}">
-                                                </div>
-                                                @error('vedio_link')
-                                                <div class="alert alert-danger">
-                                                <span>Please Enter the link</span>
-                                                </div>
-                                            @enderror
-
+                                     
 
                                             <div class="form-group">
-                                                    <label for="title">Hall address</label>
-                                                    <input type="text" class="form-control" name="address" value="{{$hall->address}}">
+                                                    <label for="title">Storage address</label>
+                                                    <input type="text" class="form-control" name="address" value={{$bueaty->address}}>
                                                 </div>
                                              @error('address')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the address</span>
+                                                        <span>{{$errors->first('address')}}</span>
                                                 </div>
                                             @enderror
 
                                             <div class="form-group">
                                                     <label for="title">Mobile Number</label>
-                                                    <input type="text" class="form-control" name="mobile" value="{{$hall->mobile}}">
+                                                    <input type="text" class="form-control" name="mobile" value={{$bueaty->mobile}}>
                                                 </div>
                                              @error('mobile')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the Mobile Number</span>
+                                                        <span>{{$errors->first('mobile')}}</span>
                                                 </div>
                                             @enderror
 
                                             <div class="form-group">
                                                     <label for="title">Watts  App</label>
-                                                    <input type="text" class="form-control" name="watts" value="{{$hall->watts}}">
+                                                    <input type="text" class="form-control" name="watts" value={{$bueaty->watts}}>
                                                 </div>
                                              @error('watts')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the Mobile Number</span>
+                                                        <span>{{$errors->first('watts')}}</span>
                                                 </div>
                                             @enderror
 
 
                                             <div class="form-group">
                                                     <label for="title">Facebbok link</label>
-                                                    <input type="url" class="form-control" name="facebook" value="{{$hall->facebook}}">
+                                                    <input type="url" class="form-control" name="facebook" value={{$bueaty->facebook}}>
                                                 </div>
                                              @error('facebook')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the Facebbok link</span>
+                                                        <span>{{$errors->first('facebook')}}</span>
                                                 </div>
                                             @enderror
 
                                             <div class="form-group">
                                                     <label for="title">Inestegram link</label>
-                                                    <input type="url" class="form-control" name="enestegram" value="{{$hall->enestegram}}">
+                                                    <input type="url" class="form-control" name="enestegram" value={{$bueaty->enestegram}}>
                                                 </div>
                                              @error('enestegram')
                                                 <div class="alert alert-danger">
-                                                <span>Please Enter the Inestegram link</span>
+                                                        <span>{{$errors->first('enestegram')}}</span>
                                                 </div>
                                             @enderror
+
+
+
 
                                             <div class="form-group">
                                                 <label for="image"> Image</label>
                                                 <input type="file" name="image" class="form-control-file">
                                             </div>
-                                            @error('image')
-                                            <div class="alert alert-danger">
-                                                <span> Please Select Image</span>
-                                            </div>
-                                            @enderror
+                                          
+
 
                                                
-                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                <button type="submit" class="btn btn-primary">update</button>
                                             </form>
                     
                                     </div>

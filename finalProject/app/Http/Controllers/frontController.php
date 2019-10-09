@@ -9,6 +9,7 @@ use App\Category;
 use App\offer;
 use App\Hall;
 use App\Storage;
+use App\ButyCenter;
 
 class frontController extends Controller
 {
@@ -63,9 +64,11 @@ class frontController extends Controller
         //$categories = Category::all();
         $halls = Hall::paginate(6);
         $storage = Storage::paginate(6);
+        $centers = ButyCenter::paginate(6);
         return view('users.servises')->with('category',  $category)
                                     ->with('halls', $halls)
                                     ->with('storage',  $storage)
+                                    ->with('centers',$centers)
                                     ->with('forNav',Category::all());
 
     }
@@ -73,6 +76,12 @@ class frontController extends Controller
     public function clothes($id){
         $storage = Storage::find($id);
         return view('users.clothes')->with('storage',$storage)
+        ->with('forNav',Category::all());
+    }
+
+    public function buty($id){
+        $center = ButyCenter::find($id);
+        return view('users.center')->with( 'center', $center)
         ->with('forNav',Category::all());
     }
 

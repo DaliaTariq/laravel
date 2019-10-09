@@ -43,12 +43,10 @@ Route::get('/home', 'HomeController@index')->name('home');
    Halls Routes
  ===========================================================*/
  Route::prefix('hall')->group(function (){
-    Route::get('/index','HallController@index')->name('index_hall');
-    Route::get('/create','HallController@create')->name('create_hall');
-    Route::post('/store','HallController@store')->name('store_hall');
-    Route::get('/edit/{id}','HallController@edit')->name('edit_hall');
-    Route::post('/update/{id}','HallController@update')->name('update_hall');
-    Route::get('/delete/{id}','HallController@destroy')->name('destroy_hall');
+  Route::get('/index','hallController@index')->name('index_hall');
+  Route::get('/create','hallController@create')->name('create_hall');
+  Route::post('/store','hallController@store')->name('store_hall');
+ 
  });
 
 
@@ -65,14 +63,14 @@ Route::get('/home', 'HomeController@index')->name('home');
  });
 
  /*============================================================
-  Storage Routes
+ Bueaty Routes
  ===========================================================*/
  Route::prefix('buty')->group(function (){
   Route::get('/index','butyController@index')->name('index_buty');
  Route::get('/create','butyController@create')->name('create_buty');
   Route::post('/store','butyController@store')->name('store_buty');
- /* Route::get('/edit/{id}','StorageController@edit')->name('edit_storage');
- Route::post('/update/{id}', 'StorageController@update')->name('update_storage');
+ /* Route::get('/edit/{id}','butyController@edit')->name('edit_buty');
+ /*Route::post('/update/{id}', 'StorageController@update')->name('update_storage');
  Route::get('/delete/{id}','StorageController@destroy')->name('destroy_storage');*/
 });
 
@@ -113,6 +111,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::post('/dosend','frontController@dosend')->name('dosend');
      Route::get('/category/{id}', 'frontController@servicePage')->name('service_page');
      Route::get('/clothes/{id}', 'frontController@clothes')->name('clothes_page');
+     Route::get('/center/{id}', 'frontController@buty')->name('center_page');
 
    
  

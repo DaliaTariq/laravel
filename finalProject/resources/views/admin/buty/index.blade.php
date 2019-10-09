@@ -50,7 +50,7 @@
                                                     <td scope="row">{{$center->name}}</td>
                                                     <td scope="row">{{$center->created_at->diffForHumans()}}</td>
                                                   
-                                                    <td> <a class="" href="{{--route('edit_storage',['$id'=>$storage->id])--}}">
+                                                    <td> <a class="" href="{{--route('edit_buty',['$id'=>$bueaty->id])--}}">
                                                         <i class="fas fa-edit"></i>
                                                     </a></td>
                                                     <td>
