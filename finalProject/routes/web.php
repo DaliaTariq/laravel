@@ -112,6 +112,7 @@ Route::get('/home', 'HomeController@index')->name('home');
      Route::get('/category/{id}', 'frontController@servicePage')->name('service_page');
      Route::get('/clothes/{id}', 'frontController@clothes')->name('clothes_page');
      Route::get('/center/{id}', 'frontController@buty')->name('center_page');
+     Route::get('/offer/{id}', 'frontController@offer')->name('offer_page');
 
    
  

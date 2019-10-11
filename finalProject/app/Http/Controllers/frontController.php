@@ -81,8 +81,14 @@ class frontController extends Controller
 
     public function buty($id){
         $center = ButyCenter::find($id);
-        return view('users.center')->with( 'center', $center)
-        ->with('forNav',Category::all());
+        return view('users.center')->with('center',$center)
+                                   ->with('forNav',Category::all());
+    }
+
+    public function offer($id){
+        $offer = offer::find($id);
+        return view('users.offer')->with('offer', $offer)
+                                  ->with('forNav',Category::all());
     }
 
     /**

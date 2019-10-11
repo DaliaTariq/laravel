@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="hero_image">
                     <div class="overlay">
-                    <h2>{{$center->name}}</h2>
+                   
                     </div>
                     <img src="{{asset('front/images/salon1.jpg')}}">
                     </div>

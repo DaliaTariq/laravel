@@ -462,7 +462,15 @@ main#hall .hall h3{
    font-size: 50px;
    font-size: 44px;
    padding-right: 45px;
-   margin-bottom: 117px;
+   margin-bottom: 40px;
+}
+main#hall .hall p{
+
+   font-size: 18px;
+   color:#4E4D4D;
+   width:80%;
+   margin: 0 auto;
+   margin-bottom: 70px;
 }
 
 

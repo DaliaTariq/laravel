@@ -52,11 +52,11 @@
                                                     <td scope="row">{{$category->created_at->diffForHumans()}}</td>
                                                   
                                                     <td> <a class="" href="{{route('edit_category',['$id'=>$category->id])}}">
-                                                        <i class="fas fa-edit"></i>
+                                                        <!--i class="fas fa-edit"></i-->edit
                                                     </a></td>
                                                     <td>
                                                     <a class="" href="{{route('destroy_category',['$id'=>$category->id])}}">
-                                                    <i class="fas fa-trash-alt"></i>
+                                                    <!--i class="fas fa-trash-alt"></i-->delete
                                                     </a>
                                                     </td>
                                                  

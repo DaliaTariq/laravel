@@ -106,7 +106,7 @@
                                     <p class="descriptin">
                                         {{$offer->description}}
                                     </p>
-                                    <a class="read_more" href="#">المزيد</a>
+                                    <a class="read_more" href="{{route('offer_page',['$id'=> $offer->id])}}">المزيد</a>
                                     <div class="clearfix"></div>
     
                                 </div>

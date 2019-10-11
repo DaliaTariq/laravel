@@ -47,9 +47,11 @@ class hallController extends Controller
         $request->validate($this->rules(),$this->messages());
 
            //image data for uploade
+           if(!empty($request->file('image'))) {
            $image = $request->image;
            $image_new_name= time().$image->getClientOriginalName(); 
            $image->move('uploads/services/',  $image_new_name); //path where the images will save*/
+           }
 
            
            $hall =Hall::create([
